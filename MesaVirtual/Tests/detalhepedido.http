@@ -1,0 +1,14 @@
+@MesaVirtual_HostAddress = http://localhost:5270
+
+### Criar um novo detalhe de pedido (autenticado como Funcionário ou Gerente)
+POST {{MesaVirtual_HostAddress}}/api/detalhespedidos
+Content-Type: application/json
+
+{
+  "quantidade": 2,
+  "pedidoId": 2,
+  "itemId": 3
+}
+
+### Obter todos os detalhes de um pedido por ID
+GET {{MesaVirtual_HostAddress}}/api/detalhespedidos/1
