@@ -1,0 +1,35 @@
+@MesaVirtual_HostAddress = http://localhost:5270
+### Criar pedido (autenticado)
+POST {{MesaVirtual_HostAddress}}/api/pedidos
+Content-Type: application/json
+
+{
+  "nomeCliente": "João Silva",
+  "numeroMesaCliente": 5
+}
+
+### Obter todos os pedidos
+GET {{MesaVirtual_HostAddress}}/api/pedidos
+
+### Obter pedido por ID
+GET {{MesaVirtual_HostAddress}}/api/pedidos/1
+
+### Atualizar pedido (chamar garçom)
+PUT {{MesaVirtual_HostAddress}}/api/pedidos/1/chamar-garcom
+### Deletar pedido
+DELETE {{MesaVirtual_HostAddress}}/api/pedidos/1
+### Obter total do pedido
+GET {{MesaVirtual_HostAddress}}/api/pedidos/1/total
+
+### Adicionar detalhe ao pedido
+POST {{MesaVirtual_HostAddress}}/api/pedidos/adicionar-detalhe
+Content-Type: application/json
+
+{
+  "pedidoId": 1,
+  "itemId": 2,
+  "quantidade": 3
+}
+
+### Obter pedidos por número de mesa
+GET {{MesaVirtual_HostAddress}}/api/pedidos/mesa/5
