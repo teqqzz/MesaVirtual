@@ -1,0 +1,21 @@
+@MesaVirtual_HostAddress = http://localhost:5270
+
+### Cadastro de novo usuário
+POST {{MesaVirtual_HostAddress}}/api/usuario/cadastrar
+Content-Type: application/json
+
+{
+  "email": "gerente@example.com",
+  "nome": "John Doe",
+  "role": 1,
+  "senha": "SenhaForte123"
+}
+
+### Login do usuário
+POST {{MesaVirtual_HostAddress}}/api/usuario/login
+Content-Type: application/json
+
+{
+  "email": "gerente@example.com",
+  "senha": "SenhaForte123"
+}

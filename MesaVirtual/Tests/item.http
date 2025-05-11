@@ -1,0 +1,66 @@
+@MesaVirtual_HostAddress = http://localhost:5270
+### Criar item (autenticado como Funcionario ou Gerente)
+POST {{MesaVirtual_HostAddress}}/api/itens
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZ2VyZW50ZUBleGFtcGxlLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkdlcmVudGUiLCJleHAiOjE3NDY5OTE0Mzd9.44cEXyspTwdYkdDHHg1QgVSf-TXvi17kXlvBvsyTbek
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="nome"
+
+Item Teste
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="descricao"
+
+Descrição do item
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="preco"
+
+10.5
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="categoriaId"
+
+1
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="imagem"; filename="652.jpg"
+Content-Type: image/jpeg
+
+< /home/miranda/Downloads/imagem.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Obter todos os itens
+GET {{MesaVirtual_HostAddress}}/api/itens
+
+### Obter itens por categoria
+GET {{MesaVirtual_HostAddress}}/api/itens/1
+
+### Atualizar item (autenticado como Funcionario ou Gerente)
+PUT {{MesaVirtual_HostAddress}}/api/itens/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZ2VyZW50ZUBleGFtcGxlLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkdlcmVudGUiLCJleHAiOjE3NDY5OTE0Mzd9.44cEXyspTwdYkdDHHg1QgVSf-TXvi17kXlvBvsyTbek
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="nome"
+
+Item TesteAtualizado
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="descricao"
+
+Descrição do item
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="preco"
+
+15.5
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="categoriaId"
+
+1
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="imagem"; filename="652.jpg"
+Content-Type: image/jpeg
+
+< /home/miranda/Downloads/652.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Deletar item (autenticado somente como Gerente)
+DELETE {{MesaVirtual_HostAddress}}/api/itens/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjExIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6InRlc3QxMEBleGFtcGxlLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkZ1bmNpb25hcmlvIiwiZXhwIjoxNzQ2OTg3NzQxfQ.3kpFKgvf-dAZocJrXPLWAEozUU_KgCagiR2oWLf3gPI

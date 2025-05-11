@@ -1,0 +1,31 @@
+@MesaVirtual_HostAddress = http://localhost:5270
+
+### Obter todas as categorias
+GET {{MesaVirtual_HostAddress}}/api/categorias
+
+### Obter uma categoria por ID
+GET {{MesaVirtual_HostAddress}}/api/categorias/2
+
+### Criar nova categoria (autenticado como Funcionario ou Gerente)
+POST {{MesaVirtual_HostAddress}}/api/categorias
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZnVuY2lvbmFyaW9AZXhhbXBsZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJGdW5jaW9uYXJpbyIsImV4cCI6MTc0Njk5MTM1NH0.-tFQBZC0iVTdX7O5ngFjRXPdCSMK1jh7PqqgyOcLeug
+
+{
+  "nome": "Teste"
+}
+
+### Atualizar categoria existente (autenticado como Funcionario ou Gerente)
+PUT {{MesaVirtual_HostAddress}}/api/categorias/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZnVuY2lvbmFyaW9AZXhhbXBsZS5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJGdW5jaW9uYXJpbyIsImV4cCI6MTc0Njk5MTM1NH0.-tFQBZC0iVTdX7O5ngFjRXPdCSMK1jh7PqqgyOcLeug
+
+{
+  "nome": "Atualizadooooss",
+  "atualizadoEm": "2025-05-10T12:00:00Z"
+}
+
+### Deletar categoria (somente Gerente)
+DELETE {{MesaVirtual_HostAddress}}/api/categorias/1
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdDE1QGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiRnVuY2lvbmFyaW8iLCJleHAiOjE3NDY5OTAyNDl9.iGs7E3TY8UFHIQ_yLg8oizi4c9TYq2_9SCqjPB3tOCs
